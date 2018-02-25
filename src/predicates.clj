@@ -36,10 +36,14 @@
   (every? (fn [a] (contains? (:awards book) a)) awards))
 
 (defn my-some [pred a-seq]
-  :-)
+  (first (map pred (filter pred a-seq))))
+
+(def stuff [1 3 5 7 11])
+
+(my-some odd? stuff)
 
 (defn my-every? [pred a-seq]
-  :-)
+  (= (filter pred a-seq) a-seq))
 
 (defn prime? [n]
   :-)
