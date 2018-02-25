@@ -46,5 +46,8 @@
   (= (filter pred a-seq) a-seq))
 
 (defn prime? [n]
-  :-)
+  (let [divides? (fn [x] (integer? (/ n x)))]
+    (not (some divides? (range 2 (+ 1 (/ n 2)))))))
+
+(prime? 132)
 ;^^
